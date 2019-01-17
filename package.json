@@ -1,0 +1,11 @@
+{
+    "name": "@jamen/ws",
+    "author": "Jamen Marz <me@jamenmarz.com>",
+    "description": "WebSocket functions that make life easier.",
+    "version": "0.1.0",
+    "main": "src/ws.js",
+    "dependencies": {
+        "bytes": "^3.0.0",
+        "ms": "^2.1.1"
+    }
+}
