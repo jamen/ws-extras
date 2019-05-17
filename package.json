@@ -1,7 +1,7 @@
 {
-    "name": "@jamen/ws",
+    "name": "@jamen/ws-extras",
     "author": "Jamen Marz <me@jamenmarz.com>",
-    "description": "WebSocket functions that make life easier.",
+    "description": "Functions for using WebSockets on Node.js.",
     "version": "0.1.0",
     "main": "src/ws.js",
     "dependencies": {
