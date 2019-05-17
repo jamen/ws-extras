@@ -12,7 +12,7 @@ A loop for receiving messages from the connection through `recv`. Once the conne
 
 ```js
 const WebSocket = require('ws')
-const { loop } = require('@jamen/ws')
+const { loop } = require('@jamen/ws-extras')
 
 const server = new WebSocket.Server({ host, port })
 
@@ -23,7 +23,7 @@ async function recv (conn) {
 }
 ```
 
-To receive messages from `conn` see the functions `buffer`, `text`, and `json`.
+To get messages from `conn` in this loop, see the functions below.
 
 ### `buffer(conn, options)`
 
@@ -42,7 +42,7 @@ The `options` is an object that can contain
 The function returns a promise resolving the result. The promise can reject with an error if the limit is reached, the timeout is reached, or an error from `ws` emerges.
 
 ```js
-const { buffer, text, json } = require('@jamen/ws')
+const { buffer, text, json } = require('@jamen/ws-extras')
 
 async function recv (conn) {
     let message
@@ -59,17 +59,15 @@ async function recv (conn) {
 
 ### `jsonEvent(conn, options)`
 
-Similar to `json` except only `{ event, data }` is allowed.
-
-The `options` are the same.
+Similar to `json` except only `{ event, data }` is allowed. The `options` are the same.
 
 The returned promise can be rejected if the message is not a `{ event, data }` structure.
 
 ```js
-const { jsonEvent } = require('@jamen/ws')
+const { jsonEvent } = require('@jamen/ws-extras')
 
 async function recv (conn) {
-    const { name, data } = await jsonEvent(conn)
+    const { event, data } = await jsonEvent(conn)
 
     // ...
 }
